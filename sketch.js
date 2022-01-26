@@ -48,7 +48,7 @@ function draw() {
   for(var i = 0; i < 5; i++) {
     var size = start - dec * i;
     if(i == 0) {
-      arc(300,300,size,size,disp[i])
+      arc(300,300,size,size,-PI / 2, disp[i])
     } else {
       arc(300,300,size,size,disp[i-1],disp[i])
     }
