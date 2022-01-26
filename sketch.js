@@ -43,7 +43,7 @@ function draw() {
     disp[i] = disp[i] + (cur[i] - disp[i]) * interpolate;
   }
 
-  var start = 400, dec = 75;
+  var start = 500, dec = 100;
 
   for(var i = 0; i < 5; i++) {
     var size = start - dec * i;
