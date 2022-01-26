@@ -11,9 +11,9 @@ function draw() {
   background(220);
   // Get current time and scale to their current degrees
   var offset = -PI / 2
-  var c_hour = hour() * PI * 2 / 3 / 24 + offset;
-  var c_minute = c_hour + minute() * PI * 2 / 3 / 60;
-  var c_second = c_minute + second() * PI * 2 / 3 / 60;
+  var c_hour = hour() * PI * 2 / 24 + offset;
+  var c_minute = c_hour + minute() * PI * 2 / 60;
+  var c_second = c_minute + second() * PI * 2 / 60;
 
   //interpolate the set h,m,s degrees to approach the goal values
   h = h + (c_hour - h) * interpolate;
