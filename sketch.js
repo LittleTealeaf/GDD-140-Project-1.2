@@ -8,7 +8,7 @@ var interpolate = 0.1;
 
 
 function draw() {
-  background(220);
+  background(255);
   // Get current time and scale to their current degrees
   var offset = -PI / 2
   var c_hour = hour() * PI * 2 / 24 + offset;
