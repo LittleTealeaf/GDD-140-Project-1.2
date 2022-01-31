@@ -4,32 +4,28 @@ function setup() {
 }
 
 
-var interpolate = 0.03;
+var interp = 0.03;
 
 var disp = [0,0,0,0,0]
 
 function draw() {
   background(255)
 
-  var cur = [month() / 12, day() / 31, hour() / 24, minute() / 60, second() / 60]
+  var target = [month() / 12, day() / 31, hour() / 24, minute() / 60, second() / 60]
 
-  for(var i = 0; i < 5; i++) {
-    cur[i] = cur[i] * PI * 2;
-    if(i > 0) {
-      cur[i] += cur[i-1]
+  var start = -PI / 2;
+  var end = 0;
+
+  var start_size = 500, decrease_size = 50;
+
+  for(var i = 0; i < target.length; i++) {
+    disp[i] += (target[i] * 2 * PI - disp[i]) * interp;
+
+    end = start + disp[i];
+    var size = start_size - decrease_size * i;
+    if(start != end) {
+      arc(300,300,size,size,start,end)
     }
-    disp[i] = disp[i] + (cur[i] - disp[i]) * interpolate;
+    start = end;
   }
-
-  var start = 400, dec = 50;
-
-  for(var i = 0; i < 5; i++) {
-    var size = start - dec * i;
-    if(i == 0) {
-      arc(300,300,size,size,-PI / 2, disp[i] - PI / 2)
-    } else {
-      arc(300,300,size,size,disp[i-1] - PI / 2,disp[i] - PI / 2)
-    }
-  }
-
 }
