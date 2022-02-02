@@ -4,7 +4,6 @@ function setup() {
   createCanvas(600, 600);
 }
 
-
 var interp = 0.03;
 
 var disp = [0,0,0,0,0]
