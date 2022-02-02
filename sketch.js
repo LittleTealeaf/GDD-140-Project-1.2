@@ -2,8 +2,6 @@
 
 function setup() {
   createCanvas(600, 600);
-  
-  strokeWeight(10);
 }
 
 
@@ -13,6 +11,7 @@ var disp = [0,0,0,0,0]
 
 function draw() {
   background(255);
+  strokeWeight(10);
 
   var target = [month() / 12, day() / 31, hour() / 24, minute() / 60, second() / 60]
 
