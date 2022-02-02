@@ -11,7 +11,6 @@ var disp = [0,0,0,0,0]
 
 function draw() {
   background(255);
-  strokeWeight(10);
 
   var target = [month() / 12, day() / 31, hour() / 24, minute() / 60, second() / 60]
 
@@ -19,7 +18,8 @@ function draw() {
   var end = 0;
 
   var start_size = 550, decrease_size = 50;
-
+  
+  strokeWeight(10);
   for(var i = 0; i < target.length; i++) {
     disp[i] += (target[i] * 2 * PI - disp[i]) * interp;
 
