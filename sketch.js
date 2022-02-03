@@ -12,6 +12,7 @@ var disp = [0,0,0,0,0]
 
 function draw() {
   background(255);
+  fill(255,255,255);
 
   //Target values for displaying
   var target = [month() / 12, day() / 31, hour() / 24, minute() / 60, second() / 60]
